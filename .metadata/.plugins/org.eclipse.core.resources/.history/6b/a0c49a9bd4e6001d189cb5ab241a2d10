@@ -1,0 +1,53 @@
+package pruebaDesign;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JTextArea;
+import javax.swing.JEditorPane;
+import javax.swing.JPasswordField;
+import javax.swing.SwingConstants;
+
+@SuppressWarnings("serial")
+public class dos extends JFrame {
+
+	private JPanel contentPane;
+
+	public dos(String name, String nickname, String title, int length) {
+		setTitle("Saludo");
+		setResizable(false);
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100,1000, 459, 184);
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(43, 0, 43));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JButton btnNewButton = new JButton("Atras");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				uno.getUno().setVisible(true);
+			}
+		});
+		btnNewButton.setForeground(new Color(255, 255, 0));
+		btnNewButton.setBackground(new Color(0, 0, 0));
+		btnNewButton.setBounds(169, 104, 89, 23);
+		contentPane.add(btnNewButton);
+		
+		JLabel lblNewLabel = new JLabel("Hola "+name+", A.K.A.: "+nickname+", "+title+".");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel.setForeground(new Color(255, 255, 255));
+		lblNewLabel.setBounds(18, 11, 425, 82);
+		contentPane.add(lblNewLabel);
+	}
+}
