@@ -1,4 +1,0 @@
-package projectDiablo;
-
-@SuppressWarnings("serial")
-public class exception1 extends Exception {}
